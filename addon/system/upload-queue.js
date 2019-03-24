@@ -251,7 +251,7 @@ export default Ember.ArrayProxy.extend({
 
     // Clean up the orphaned uploader and its files
     if (get(this, 'orphanedQueues').indexOf(uploader) !== -1) {
-      this.garbageCollectUploader(uploader);
+      //this.garbageCollectUploader(uploader);
     }
   },
 
