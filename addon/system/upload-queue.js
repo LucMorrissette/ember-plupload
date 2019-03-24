@@ -274,11 +274,14 @@ export default Ember.ArrayProxy.extend({
       // So we need to stub out `upload` and trigger
       // the queued event
       } else {
+        console.log("file uploading");
         file.upload = file.read = function () {
           Ember.run.debounce(uploader, 'refresh', 750);
           return Ember.RSVP.reject(error, `File: '${error.file.id}' ${error.message}`);
         };
         if (file) {
+          console.log("file destroying", file);
+
           file.destroy();
         }
 
