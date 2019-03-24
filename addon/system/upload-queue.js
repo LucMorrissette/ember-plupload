@@ -219,7 +219,7 @@ export default Ember.ArrayProxy.extend({
     var results = this.parseResponse(response);
     file = this.findBy('id', file.id);
     if (file) {
-      this.removeObject(file);
+      //this.removeObject(file);
     }
 
     // NOTE: Plupload calls UploadProgress upon triggering FileUploaded,
@@ -281,7 +281,6 @@ export default Ember.ArrayProxy.extend({
         };
         if (file) {
           console.log("file destroying", file);
-
           file.destroy();
         }
 
